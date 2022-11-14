@@ -1,0 +1,172 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+:root{
+    --Violet: hsl(257, 40%, 49%);
+    --Soft-Magenta: hsl(300, 69%, 71%);
+    --white: hsl(0, 0%, 100%);
+}
+
+h1{
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 600; 
+    color: var(--white);
+    font-size: 3em;
+    line-height: 1.5em;
+
+}
+p{
+    font-family: 'Open Sans', sans-serif; 
+    color: var(--white);
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 1.5em;
+    opacity: .9;
+}
+
+.bg-images{
+    position: absolute;
+    left: 5;
+    top: -2em;
+    z-index: -1;
+}
+body{
+    margin: auto;
+    box-sizing: border-box;
+    background-color: var(--Violet);
+    min-height: 100vh;
+    max-width: 750px;
+    
+}
+    
+.container{
+    max-width: 80%;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.logo-icon{
+    width: 40%;
+    margin-bottom: 8em;
+}
+.illustration{
+    margin: auto auto;
+    width: 105%;
+    justify-content: center;
+}
+.content{
+    text-align: center;
+    margin-top: 6em;
+}
+button{
+    margin-top: .6em;
+    margin-bottom: 4em;
+    min-width: 68%;
+    height: 3em;
+    border-color: var(--Violet);
+    border-radius: 3em;
+    font-size: 1.6em;
+    color: var(--Violet);
+    font-family: 'Open Sans', sans-serif; 
+}
+button:hover{
+    cursor: pointer;
+    background-color: var(--Soft-Magenta);
+    color: var(--white);
+}
+.icon-social{
+    position: relative;
+    right: 3%;
+}
+.icon-social ul li{
+    display: inline-flex;
+}
+.icon-social ul li i{
+    margin: auto .6em;
+    color: var(--white);
+    border: 2px solid var(--white);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-social ul li i:hover{
+    cursor: pointer;
+    color: var(--Soft-Magenta);
+    border-color: var(--Soft-Magenta);
+
+}
+
+footer{
+    display: none;
+}
+
+@media(min-width:1200px){
+    .bg-images{
+        left: 0;
+        
+    }
+    body{
+        max-width: 1200px;
+        max-height: 800px;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 70% 30%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "logo logo"
+            "images  text"
+        ;
+        gap: 50px;
+        margin-left: 1%;
+
+    }
+    .logo-icon{
+        grid-area: logo;
+        margin-bottom: 2%;
+    }
+    .logo-icon img{
+        width: 50%;
+    }
+    .images{
+        grid-area: images;
+    }
+    .illustration{
+        height: 90%;
+        width: 100%;
+    }
+    .text{
+        grid-area: text;
+    }
+    .content{
+        margin-top: 5%;
+        text-align: left;
+        width: 370px;
+        
+    }
+    h1{
+        font-size: 1.8em;
+        line-height: 2em;
+        margin-bottom: 0em;
+        width: 360px;
+    }
+    p{
+        font-size: .8em;
+    }
+    button{
+        min-width: 40%;
+        height: 3.5em;
+        font-size: .8em;
+    }
+    .icon-social{
+        position: absolute;
+        bottom: -8em;
+    }
+}
